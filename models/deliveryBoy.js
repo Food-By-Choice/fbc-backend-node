@@ -8,8 +8,8 @@ const DeliveryBoySchema = mongoose.Schema({
     image : { type : String },
     kyc : [IDCard],
     deliveries : [Delivery],
-    currentLocation : { lat : String, long : String },
-    status : String
+    currentLocation : { lat : String, long : String, locationStatus : String },
+    online : Boolean
 })
 
 const DeliveryBoy = mongoose.model('deliveryboy', DeliveryBoySchema);
@@ -23,4 +23,4 @@ module.exports = {
 // 'kyc' should be prioritized with Driving Licence
 // 'deliveries' are those deliveries that are/were assigned to this delivery guy
 // 'currentLocation' => real time location of delivery boy
-// 'status' => ['active', 'offline' ] => delivery boy should be turn this on/off 
+// 'status' => ['active', 'offline'] => delivery boy should be turn this on/off 

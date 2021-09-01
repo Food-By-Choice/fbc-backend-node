@@ -41,6 +41,10 @@ const validateOtp = (req, res, next) => {
 const validatePartnerUpdate = (req, res, next) => {
     const { passportPhoto, card, fssai } = req.body;
     if(!passportPhoto) return res.status(400).json({status : 0, msg : 'Provide A Passport Size Photo'});
+    if(!card) return res.status(400).json({status : 0, msg : 'Provide Card Details'});
+    if(!Object.keys(card).every(key => 
+        ['nameOnCard', 'number', 'imgFront', 'imgBack', 'cardType'].includes(key)
+    )) return res.status(400).json({status : 0, msg : "Please Provide All Necessary Details"})
     next()
 }
 
