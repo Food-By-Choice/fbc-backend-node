@@ -30,4 +30,4 @@ module.exports = {
 // ex. contents = [ { item : FoodSchema/ProductSchema, quantity : 2 }, { item : FoodSchema/ProductSchema, quantity : 4 } ]
 
 // 'orderPrice' is the total price of the order excluding taxes or delivery charges
-// 'status' is the current state of order 
+// 'status' is the current state of order => { preparing, dispatched, delivered, failed }
