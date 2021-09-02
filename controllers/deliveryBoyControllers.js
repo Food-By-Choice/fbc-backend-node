@@ -1,4 +1,4 @@
-const { DeliveryBoy } = require('../models/deliveryBoy')
+const { DeliveryBoy } = require('../models/deliveryBoy.js')
 
 const updateDetails = async(req, res) => {
     const { passportPhoto, cards, fssai } = req.body;

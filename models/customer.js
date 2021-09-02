@@ -14,7 +14,7 @@ const CustomerSchema = mongoose.Schema({
     address : [AddressSchema],
     currentAddressIndex : { type : Number , default : 0 },
     image : { type : String, default : 'https://www.pngarts.com/files/10/Default-Profile-Picture-Download-PNG-Image.png'},
-    // orders : [Order],
+    orders : [Order],
     wishlist : [WishlistSchema],
     cart_id : { type : String }
 }, {timestamps : true})
