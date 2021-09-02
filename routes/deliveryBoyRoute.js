@@ -12,8 +12,8 @@ const {
     validatePartnerUpdate 
 } = require('../middleware/middleware.js')
 
-router.post('/updateDetails', authenticateToken, validatePartnerUpdate, updateDetails)
-router.post('/updateLocation', authenticateToken, updateLocation)
-router.get('/toogleDriverState', authenticateToken, toggleDriverState)
+router.post('/update-details', authenticateToken, validatePartnerUpdate, updateDetails)
+router.post('/update-location', authenticateToken, updateLocation)
+router.get('/toogle-driver-state', authenticateToken, toggleDriverState)
 
 module.exports = router

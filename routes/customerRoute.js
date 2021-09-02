@@ -9,7 +9,7 @@ const {
     authenticateToken
 } = require('../middleware/middleware.js')
 
-router.post('/addAddress', authenticateToken, addAddress)
-router.post('/updateAddressIndex', authenticateToken, updateAddressIndex)
+router.post('/add-address', authenticateToken, addAddress)
+router.post('/update-address-index', authenticateToken, updateAddressIndex)
 
 module.exports = router

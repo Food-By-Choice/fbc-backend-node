@@ -24,7 +24,7 @@ app.use(cookieParser())
 
 app.use('/auth', authRoute)
 app.use('/distributor', distributorRoute)
-app.use('/deliveryBoy', deliveryBoyRoute)
+app.use('/delivery-boy', deliveryBoyRoute)
 
 mongoose.connect(process.env.MONGO_URL, { useUnifiedTopology : true, useNewUrlParser : true } )
     .then(() => {

@@ -10,6 +10,6 @@ const {
     validatePartnerUpdate 
 } = require('../middleware/middleware.js')
 
-router.post('/updateDetails', authenticateToken, validatePartnerUpdate, updateDetails)
+router.post('/update-details', authenticateToken, validatePartnerUpdate, updateDetails)
 
 module.exports = router

@@ -16,8 +16,8 @@ const {
     validateOtp
 } = require('../middleware/middleware.js')
 
-router.post('/smsotp', validateMobile, smsOtp)
-router.post('/verifyotp', validateMobile, validateOtp, verifyOtp)
+router.post('/sms-otp', validateMobile, smsOtp)
+router.post('/verify-otp', validateMobile, validateOtp, verifyOtp)
 router.post('/register', validateMobile, validateRegisteration, registerUser)
 router.get('/logout', authenticateToken, logOut)
 router.get('/refresh', authenticateToken, refresh)
