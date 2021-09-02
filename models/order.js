@@ -18,8 +18,8 @@ module.exports = {
 }
 
 
-// 'id' should be generated with prefix 'OD'
 // a new Order is created when a customer places an order.
+// 'id' should be generated with prefix 'OD'
 // 'customer_id' is the id of the customer who plcaed this order.
 // 'shop_id' is the id of the shop from where the food/product is ordered
 

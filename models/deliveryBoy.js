@@ -22,5 +22,5 @@ module.exports = {
 // 'image' is the passport size photo.
 // 'kyc' should be prioritized with Driving Licence
 // 'deliveries' are those deliveries that are/were assigned to this delivery guy
-// 'currentLocation' => real time location of delivery boy
-// 'status' => ['active', 'offline'] => delivery boy should be turn this on/off 
+// 'currentLocation' => real time location of delivery boy and 'locationnStatus' = what the driver is doing currently ? like 'On the way' etc.
+// 'online' : true => if the driver is on job, else false

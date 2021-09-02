@@ -2,18 +2,14 @@ const express = require('express')
 const router = express.Router()
 
 const {
-    updateDetails,
-    updateLocation,
-    toggleDriverState
+    addAddress, updateAddressIndex
 } = require('../controllers/customerControllers.js')
 
 const { 
-    authenticateToken, 
-    validatePartnerUpdate 
+    authenticateToken
 } = require('../middleware/middleware.js')
 
-router.post('/updateDetails', authenticateToken, validatePartnerUpdate, updateDetails)
-router.post('/updateLocation', authenticateToken, updateLocation)
-router.get('/toogleDriverState', authenticateToken, toggleDriverState)
+router.post('/addAddress', authenticateToken, addAddress)
+router.post('/updateAddressIndex', authenticateToken, updateAddressIndex)
 
 module.exports = router
