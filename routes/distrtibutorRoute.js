@@ -6,8 +6,9 @@ const {
 } = require('../controllers/distributorControllers.js')
 
 const {
-    createShop
+    createShop,updateMenu,toggleStatus
 } = require('../controllers/shopController.js')
+
 
 const {
     authenticateToken,
@@ -15,6 +16,8 @@ const {
 } = require('../middleware/middleware.js')
 
 router.post('/update-details', authenticateToken, validatePartnerUpdate, updateDetails)
-router.post('/create-shop',authenticateToken,validatePartnerUpdate,createShop)
+router.post('/create-shop',authenticateToken,createShop)
+router.patch('/update-menu',authenticateToken,updateMenu)
+router.patch('/toggle-status',authenticateToken,toggleStatus)
 
 module.exports = router
