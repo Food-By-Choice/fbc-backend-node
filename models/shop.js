@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const { AddressSchema, FoodSchema } = require('./commonModels');
-const { Order } = require('./order');
+const { Order,OrderSchema } = require('./order');
 
 const MenuSectionItem = mongoose.Schema({
     item : FoodSchema,
@@ -16,7 +16,7 @@ const MenuSection = mongoose.Schema({
 
 const ReviewSchema = mongoose.Schema({
     rating : Number, // max 5
-    author : String, // name of user 
+    author : String, // name of user
     review : String
 })
 
@@ -42,7 +42,7 @@ const ShopSchema = mongoose.Schema({
     acceptingOrder : { type : Boolean, default : true },
     reviews : [ReviewSchema],
     avgRating : Number,
-    orders : [Order],
+    orders : [OrderSchema],
     pureveg : { type : Boolean, default : false }
 }, {timestamps : true})
 
@@ -59,11 +59,11 @@ module.exports = {
 // 'thumb' can be the Logo of the shop ( if they have ), think it as a profile picture
 // 'images' - url of images uploaded by the shopkeeper / distributor
 
-// 'menu' is array of menuSections that a shop has 
+// 'menu' is array of menuSections that a shop has
 // 'menuSection' is array of menuItems that a shop has
 // 'inStock' = true if item is currently available, false if not
 // 'customizable' = true if the item is customizable, like a thali can be customized with 2 or 3 rotis, ( applicable only for restaurants and tiffins)
-// 'customization' are the options for available customization. 
+// 'customization' are the options for available customization.
 // example : customization = [
 //     {
 //         sectionTitle : 'Roti',
@@ -91,7 +91,7 @@ module.exports = {
 //             }
 //         ]
 //     }
-// ] 
+// ]
 
 // 'foodType', 'mealType', 'cuisineType' and 'avrageCost' are only applicable for restaurants and tiffin centers.
 // 'pureVeg' => true if and only if it is pure vegetarian ( only for restaurants and tiffin centers )
@@ -100,5 +100,5 @@ module.exports = {
 // 'acceptingOrder' => true if the shop is accepting, else false. ( switchable any time )
 
 // 'reviews' => reviews given by customers.
-// 'avgRating' => calculated every time a new review is added 
+// 'avgRating' => calculated every time a new review is added
 // 'orders' => all the orders ever placed for this shop.
