@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const { AddressSchema, FoodSchema } = require('./commonModels');
-const { Order,OrderSchema } = require('./order');
+const { OrderSchema } = require('./order');
 
 const MenuSectionItem = mongoose.Schema({
     item : FoodSchema,
