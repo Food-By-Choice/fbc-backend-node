@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 const { AddressSchema, FoodSchema, ProductSchema } = require('./commonModels');
-const { Order } = require('./order');
+const {Order,OrderSchema} = require('./order');
+
 
 const WishlistSchema = mongoose.Schema({
     foodItems : [FoodSchema],
@@ -14,7 +15,7 @@ const CustomerSchema = mongoose.Schema({
     address : [AddressSchema],
     currentAddressIndex : { type : Number , default : 0 },
     image : { type : String, default : 'https://www.pngarts.com/files/10/Default-Profile-Picture-Download-PNG-Image.png'},
-    orders : [Order],
+    orders : [OrderSchema],
     wishlist : [WishlistSchema],
     cart_id : { type : String }
 }, {timestamps : true})
