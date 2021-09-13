@@ -21,6 +21,10 @@ const createOrder = async(req, res) => {
     }
 }
 
+const updateOrderStatus = async(req, res) => {
+    
+}
+
 // const dispatchDelivery =  
 
 module.exports = {

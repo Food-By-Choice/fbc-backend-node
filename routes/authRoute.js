@@ -11,6 +11,7 @@ const {
 
 const { 
     authenticateToken, 
+    authenticateRefreshToken, 
     validateMobile, 
     validateRegisteration, 
     validateOtp
@@ -20,6 +21,6 @@ router.post('/sms-otp', validateMobile, smsOtp)
 router.post('/verify-otp', validateMobile, validateOtp, verifyOtp)
 router.post('/register', validateMobile, validateRegisteration, registerUser)
 router.get('/logout', authenticateToken, logOut)
-router.get('/refresh', authenticateToken, refresh)
+router.get('/refresh', authenticateRefreshToken, refresh)
 
 module.exports = router

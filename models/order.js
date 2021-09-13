@@ -2,10 +2,11 @@ const mongoose = require('mongoose');
 
 // status = [delivered, preparing, on-the-way, failed]
 const OrderSchema = mongoose.Schema({
-    id : {type : String, unique : true },
+    id : { type : String, unique : true },
     customer_id : String,
     shop_id : String,
     delivery_id : String,
+    delivery_guy_id : String,
     contents : [],
     orderPrice : Number,
     status : String
@@ -24,6 +25,7 @@ module.exports = {
 // 'shop_id' is the id of the shop from where the food/product is ordered
 
 // 'delivery_id' is the id of guy who is delivering the order, this will be added when the order is dispatched. Once the order is delivered 
+// 'delivery_guy_id' is the id of guy who is delivering the order, this will be added when the order is dispatched. Once the order is delivered 
 // the id will be replaced by the 'id' from 'Delivery Schema'
 
 // 'contents' is the array of foodItems / Products with ordered quantities by the user 

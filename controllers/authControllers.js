@@ -114,12 +114,25 @@ const logOut = async(req, res) => {
 }
 
 const refresh = async(req, res) => {
-    const user = req.user;
+    const logger = req.user;
     try {
-        const newAccessToken = generateAccessToken({ id : user.id, mobile : user.mobile, type : user.userType })
-        res.status(200).json({status : 1, access : newAccessToken}) 
+        const newAccessToken = generateAccessToken({ id : logger.id, mobile : logger.mobile, type : logger.userType })
+        const newRefreshToken = jwt.sign(logger, process.env.REFRESH_TOKEN_SECRET)
+        await Login.findOneAndUpdate({"id" : logger.id}, {
+            "refreshToken" :  newRefreshToken
+        })
+        let user = {}
+        switch(logger.userType){
+            case 0 : user = await Customer.find({"id" : logger.id}); break;
+            case 1 : user = await Distributor.find({"id" : logger.id}); break;
+            case 1 : user = await DeliveryBoy.find({"id" : logger.id}); break;
+            default : break;
+        }
+        res.cookie('refresh', newRefreshToken, {
+            httpOnly: true
+        }).status(200).json({status : 1, access : newAccessToken, name : user.name, profile : user.profile}) 
     } catch (error) {
-        res.status(500).json({status : 0, msg : "Some Error Occured"})
+        res.status(500).json({status : 0, msg : error.message})
     }
 }
 
