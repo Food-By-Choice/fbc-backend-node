@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { Delivery } = require('./delivery');
+const { Delivery,DeliverySchema } = require('./delivery');
 const { IDCard } = require('./commonModels.js');
 
 const DeliveryBoySchema = mongoose.Schema({
@@ -7,7 +7,7 @@ const DeliveryBoySchema = mongoose.Schema({
     name : { type : String },
     image : { type : String },
     kyc : [IDCard],
-    deliveries : [Delivery],
+    deliveries : [DeliverySchema],
     currentLocation : { lat : String, long : String, locationStatus : String },
     online : Boolean
 })

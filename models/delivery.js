@@ -13,7 +13,8 @@ const DeliverySchema = mongoose.Schema({
 const Delivery = mongoose.model('delivery', DeliverySchema)
 
 module.exports = {
-    Delivery
+    Delivery,
+    DeliverySchema
 }
 
 // 'id' should be generated with prefix 'DI'
