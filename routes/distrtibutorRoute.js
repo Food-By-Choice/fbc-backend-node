@@ -6,7 +6,7 @@ const {
 } = require('../controllers/distributorControllers.js')
 
 const {
-    createShop,updateMenu,toggleStatus
+    createShop,deleteShop,updateMenu,toggleStatus
 } = require('../controllers/shopController.js')
 
 
@@ -17,6 +17,7 @@ const {
 
 router.post('/update-details', authenticateToken, validatePartnerUpdate, updateDetails)
 router.post('/create-shop',authenticateToken,createShop)
+router.delete('/delete-shop/:shopId',authenticateToken,deleteShop)
 router.patch('/update-menu',authenticateToken,updateMenu)
 router.patch('/toggle-status',authenticateToken,toggleStatus)
 
