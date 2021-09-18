@@ -1,4 +1,4 @@
-const { Shop } = require('../models/Shop.js')
+const { Shop } = require('../models/shop.js')
 
 //added createShop,deleteShop,updateMenu,toggleStatus
 
