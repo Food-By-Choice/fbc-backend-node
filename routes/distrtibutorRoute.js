@@ -18,7 +18,7 @@ const {
 router.post('/update-details', authenticateToken, validatePartnerUpdate, updateDetails)
 router.post('/create-shop',authenticateToken,createShop)
 router.delete('/delete-shop/:shopId',authenticateToken,deleteShop)
-router.patch('/update-menu',authenticateToken,updateMenu)
+router.patch('/update-menu/:shopId',authenticateToken,updateMenu)
 router.patch('/toggle-status',authenticateToken,toggleStatus)
 
 module.exports = router

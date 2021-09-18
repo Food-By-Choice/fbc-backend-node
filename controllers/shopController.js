@@ -48,8 +48,8 @@ const deleteShop = async(req,res)=>{
 
 const updateMenu = async(req,res)=>{
   const distributor_id = req.user.id;
-  const reqShopId = req.body.id;
-  const updateItems = req.body.updateItems;
+  const reqShopId = req.params.shopId;
+  const updateItems = req.body;
   try {
       const updatedMenu = await Shop.findByIdAndUpdate({distributor_id : distributor_id,id:reqShopId},updateItems);
       res.status(200).json({status:1, msg : "Menu Updated"});
