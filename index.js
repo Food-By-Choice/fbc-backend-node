@@ -6,6 +6,7 @@ const cors = require('cors')
 const cookieParser = require('cookie-parser')
 
 const authRoute = require('./routes/authRoute.js')
+const commonRoute = require('./routes/commonRoute.js')
 const distributorRoute = require('./routes/distrtibutorRoute.js')
 const deliveryBoyRoute = require('./routes/deliveryBoyRoute.js')
 
@@ -25,6 +26,7 @@ app.use(express.urlencoded({extended : true}))
 app.use(cookieParser())
 
 app.use('/auth', authRoute)
+app.use('/common', commonRoute)
 app.use('/distributor', distributorRoute)
 app.use('/delivery-boy', deliveryBoyRoute)
 
