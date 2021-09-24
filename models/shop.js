@@ -32,6 +32,7 @@ const ShopSchema = mongoose.Schema({
     thumb : { type : String, default : 'https://image.freepik.com/free-vector/happy-shop-logo-template_57516-57.jpg' },
     images : [String],
     address : AddressSchema,
+    zipcode:Number,
     alternateContacts : [Number],
     menu : [MenuSection],
     foodType : [String],

@@ -4,8 +4,7 @@ const { Shop } = require('../models/shop.js')
 
 const createShop = async(req,res)=>{
     const distributor_id = req.user.id;
-    const {shopType,shopName,thumbnail,images,address,alternateContacts,menu,foodType,mealType,cuisineType,averageCost,timings,acceptingOrder,reviews,avgRating,orders,pureveg}
-    = req.body;
+    const {shopType,shopName,thumbnail,images,address,zipcode,menu,foodType,timings}= req.body;
 
     const shopId = 'SH0092342321' //change later
     try {
@@ -17,12 +16,10 @@ const createShop = async(req,res)=>{
             "thumb":thumbnail,
             "images":images,
             "address":address,
+            "zipcode":zipcode,
             "menu":menu,
             "foodType":foodType,
-            "mealType":mealType,
-            "cuisineType":cuisineType,
             "timings":timings,
-            "orders":orders,
         });
         await shop.save()
         res.status(200).json({status : 1, msg : "New shop created"})
