@@ -5,11 +5,18 @@ const {
     addAddress, updateAddressIndex
 } = require('../controllers/customerControllers.js')
 
-const { 
+const {
     authenticateToken
 } = require('../middleware/middleware.js')
 
+const {
+    findShopWithZipcode , findShopWithLastAddress
+} = require('../controllers/findAllShopsZip.js')
+
 router.post('/add-address', authenticateToken, addAddress)
 router.post('/update-address-index', authenticateToken, updateAddressIndex)
+
+router.get('/get-shops-zipcode/:zipcode',findShopWithZipcode)
+router.get('/get-shops-last-address',authenticateToken,findShopWithLastAddress)
 
 module.exports = router
