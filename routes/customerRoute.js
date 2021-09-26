@@ -16,7 +16,7 @@ const {
 router.post('/add-address', authenticateToken, addAddress)
 router.post('/update-address-index', authenticateToken, updateAddressIndex)
 
-router.get('/get-shops-zipcode',findShopWithZipcode)
+router.get('/get-shops-zipcode/:zipcode',findShopWithZipcode)
 router.get('/get-shops-last-address',authenticateToken,findShopWithLastAddress)
 
 module.exports = router
