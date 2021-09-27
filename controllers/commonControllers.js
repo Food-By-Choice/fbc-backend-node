@@ -1,4 +1,4 @@
-var { Shop } = require("../models/shop.js")
+const { Shop } = require("../models/shop.js")
 const getNearbyShops = async (req, res) => {
     // frontend sends a query with latitude, longitude, and distance as query parameters
     const { lat, long, distance } = await req.query
@@ -18,7 +18,7 @@ const getNearbyShops = async (req, res) => {
         if (shopsList.length == 0) {
             res.status(200).json({ status: 0, msg: "No shops nearby"})
         } else {
-            res.status(200).json({ status: 1, shops: shopsList })
+            res.status(200).json({ status: 1, data: shopsList })
         }
     } catch (error) {
         res.status(500).json({ status: 0, msg: error.message })
