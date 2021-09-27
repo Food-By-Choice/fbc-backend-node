@@ -9,6 +9,7 @@ const authRoute = require('./routes/authRoute.js')
 const commonRoute = require('./routes/commonRoute.js')
 const distributorRoute = require('./routes/distrtibutorRoute.js')
 const deliveryBoyRoute = require('./routes/deliveryBoyRoute.js')
+const cartRoute = require('./routes/cartRoute.js')
 
 require('dotenv').config()
 
@@ -26,6 +27,7 @@ app.use(express.urlencoded({extended : true}))
 app.use(cookieParser())
 
 app.use('/auth', authRoute)
+app.use('/cart', cartRoute)
 app.use('/common', commonRoute)
 app.use('/distributor', distributorRoute)
 app.use('/delivery-boy', deliveryBoyRoute)
