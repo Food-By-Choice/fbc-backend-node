@@ -13,10 +13,10 @@ const {
     decQuantity
 } = require('../controllers/cartControllers.js')
 
-router.post('/addItem', addItem)
-router.post('/listCart', listCart)
-router.post('/removeItem', removeItem)
-router.post('/incItem', incQuantity)
-router.post('/decItem', decQuantity)
+router.post('/addItem', authenticateToken, addItem)
+router.post('/listCart', authenticateToken, listCart)
+router.post('/removeItem', authenticateToken, removeItem)
+router.post('/incItem', authenticateToken, incQuantity)
+router.post('/decItem', authenticateToken, decQuantity)
 
 module.exports = router
